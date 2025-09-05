@@ -1,52 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-<title>Kapook Fullscreen</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  #container {
-    width: 100%;
-    height: 100%;
-    background: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
-  }
-  iframe {
-    border: none;
-    width: 100%;
-    height: 100%;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Kapook Fullscreen</title>
+
+  <!-- รองรับ Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- รองรับ iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- ลิงก์ไปยัง manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- ปรับการแสดงผลบนมือถือ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div id="container">Click to go fullscreen and open Kapook</div>
-
-<script>
-  const container = document.getElementById('container');
-
-  container.addEventListener('click', () => {
-    if (container.requestFullscreen) {
-      container.requestFullscreen();
-    } else if (container.webkitRequestFullscreen) {
-      container.webkitRequestFullscreen();
-    } else if (container.mozRequestFullScreen) {
-      container.mozRequestFullScreen();
-    } else if (container.msRequestFullscreen) {
-      container.msRequestFullscreen();
-    }
-
-    // โหลด Kapook ใน iframe
-    container.innerHTML = `<iframe src="https://www.kapook.com"></iframe>`;
-  });
-</script>
-
+  <script>
+    // เมื่อโหลดหน้า ให้ไปยัง Kapook
+    window.location.href = "https://www.kapook.com";
+  </script>
 </body>
 </html>
